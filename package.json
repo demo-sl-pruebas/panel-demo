@@ -1,0 +1,24 @@
+{
+  "name": "panel-demo",
+  "private": true,
+  "description": "Admin dashboard for Demo Fitness: members, memberships and pricing rules.",
+  "packageManager": "pnpm@10.34.9",
+  "engines": {
+    "node": ">=22.12"
+  },
+  "scripts": {
+    "dev": "pnpm --filter @demo-fitness/web dev",
+    "build": "pnpm --filter @demo-fitness/web build",
+    "preview": "pnpm --filter @demo-fitness/web preview",
+    "typecheck": "tsc -b",
+    "test": "pnpm -r --workspace-concurrency=1 test",
+    "lint": "prettier --check .",
+    "format": "prettier --write .",
+    "changeset": "changeset"
+  },
+  "devDependencies": {
+    "@changesets/cli": "3.0.3",
+    "prettier": "3.10.1",
+    "typescript": "7.0.2"
+  }
+}
