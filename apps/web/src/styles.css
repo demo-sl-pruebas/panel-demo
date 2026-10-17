@@ -1,0 +1,67 @@
+:root {
+  font-family: system-ui, sans-serif;
+  color: #1d2433;
+  background: #f6f7fb;
+}
+.df-app {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 24px 16px;
+}
+.df-stats {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 12px;
+}
+.df-stat {
+  background: #fff;
+  border-radius: 8px;
+  padding: 12px 16px;
+}
+.df-stat__value {
+  font-size: 1.8rem;
+  font-weight: 600;
+  margin: 0;
+}
+.df-table {
+  width: 100%;
+  border-collapse: collapse;
+  background: #fff;
+}
+.df-table th,
+.df-table td {
+  padding: 8px;
+  border-bottom: 1px solid #e3e6ee;
+  text-align: left;
+}
+.df-badge {
+  border-radius: 999px;
+  padding: 2px 8px;
+  font-size: 0.8rem;
+}
+.df-badge--success {
+  background: #dff5e6;
+}
+.df-badge--warning {
+  background: #fff2cc;
+}
+.df-badge--danger {
+  background: #fde0e0;
+}
+.df-badge--info {
+  background: #dde9ff;
+}
+.df-button {
+  border: 0;
+  border-radius: 6px;
+  padding: 6px 12px;
+  cursor: pointer;
+}
+.df-button--primary {
+  background: #2952cc;
+  color: #fff;
+}
+.df-calculator label {
+  display: block;
+  margin: 8px 0;
+}
