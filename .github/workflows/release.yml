@@ -1,0 +1,37 @@
+name: Release
+
+on:
+  push:
+    branches: [main]
+
+concurrency:
+  group: release
+  cancel-in-progress: false
+
+permissions:
+  contents: read
+
+jobs:
+  release:
+    name: release
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+      - uses: pnpm/action-setup@v6
+      - uses: actions/setup-node@v7
+        with:
+          node-version-file: .nvmrc
+          cache: pnpm
+      - run: pnpm install --frozen-lockfile
+      - name: Inspect pending changesets
+        run: pnpm changeset status --verbose || true
+      - name: Simulated release
+        run: |
+          pending=$(find .changeset -name '*.md' ! -name README.md | wc -l | tr -d ' ')
+          if [ "$pending" -gt 0 ]; then
+            echo "SIMULATION: $pending pending changeset(s); would open a 'chore(release): version packages' PR."
+          else
+            echo "SIMULATION: nothing pending; would tag the released package versions and deploy apps/web."
+            pnpm build
+            echo "SIMULATION: would upload apps/web/dist to the admin hosting bucket (no real deploy)."
+          fi

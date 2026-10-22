@@ -1,0 +1,11 @@
+# Default owners for everything in the repo.
+*                       @demo-fitness/frontend
+
+# Pricing and membership rules need a domain review.
+/packages/core/         @demo-fitness/domain
+
+# CI, release tooling and agent configuration.
+/.github/               @demo-fitness/platform
+/.changeset/config.json @demo-fitness/platform
+/.claude/               @demo-fitness/platform
+/scripts/               @demo-fitness/platform
