@@ -55,7 +55,7 @@ export function priceMembership(input: PricingInput): PriceBreakdown {
 
   const raw = discounts.reduce((sum, d) => sum + d.percent, 0);
   const totalDiscountPercent = Math.min(raw, MAX_DISCOUNT_PERCENT);
-  const totalCents = Math.floor((listCents * (100 - totalDiscountPercent)) / 100);
+  const totalCents = Math.round((listCents * (100 - totalDiscountPercent)) / 100);
 
   return { listCents, discounts, totalDiscountPercent, totalCents };
 }

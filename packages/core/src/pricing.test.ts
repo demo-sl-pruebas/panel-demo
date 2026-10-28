@@ -21,6 +21,11 @@ describe('priceMembership', () => {
     expect(result.discounts).toEqual([{ rule: 'family', percent: 15 }]);
   });
 
+  it('rounds half cents to the nearest cent', () => {
+    const result = priceMembership({ plan: 'basic', cycle: 'monthly', familyMembers: 1 });
+    expect(result.totalCents).toBe(2841);
+  });
+
   it('caps stacked discounts', () => {
     const result = priceMembership({
       plan: 'plus',
