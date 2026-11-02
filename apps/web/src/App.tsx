@@ -7,6 +7,7 @@ import {
   type MemberStatus,
 } from '@demo-fitness/core';
 import { Badge, StatCard, type BadgeTone } from '@demo-fitness/ui';
+import { PriceCalculator } from './PriceCalculator';
 import { SAMPLE_MEMBERS } from './members';
 
 const STATUS_TONE: Record<MemberStatus, BadgeTone> = {
@@ -67,6 +68,7 @@ export function App({ today, members = SAMPLE_MEMBERS }: AppProps) {
         </table>
       </section>
 
+      <PriceCalculator />
     </main>
   );
 }
