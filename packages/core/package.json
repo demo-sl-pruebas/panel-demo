@@ -1,6 +1,6 @@
 {
   "name": "@demo-fitness/core",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "private": true,
   "description": "Pure domain logic for Demo Fitness: membership plans, pricing rules and member status.",
   "type": "module",
