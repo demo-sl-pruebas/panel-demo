@@ -9,6 +9,8 @@ export interface PricingInput {
   student?: boolean;
   /** Number of additional family members on the same contract (0-4). */
   familyMembers?: number;
+  /** Off-peak access only (weekdays 10:00-16:00). */
+  offPeak?: boolean;
 }
 
 export interface PriceBreakdown {
@@ -29,6 +31,7 @@ export const RULES = {
   student: 20,
   familyPerMember: 5,
   familyMaxMembers: 4,
+  offPeak: 10,
 } as const;
 
 export function priceMembership(input: PricingInput): PriceBreakdown {
@@ -51,6 +54,12 @@ export function priceMembership(input: PricingInput): PriceBreakdown {
   }
   if (family > 0) {
     discounts.push({ rule: 'family', percent: family * RULES.familyPerMember });
+  }
+  if (input.offPeak) {
+    if (input.plan === 'premium') {
+      throw new RangeError('Off-peak access is not available for the Premium plan');
+    }
+    discounts.push({ rule: 'offPeak', percent: RULES.offPeak });
   }
 
   const raw = discounts.reduce((sum, d) => sum + d.percent, 0);
