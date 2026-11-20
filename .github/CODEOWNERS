@@ -1,11 +1,11 @@
 # Default owners for everything in the repo.
-*                       @demo-fitness/frontend
+*                       @demo-sl-pruebas/frontend
 
 # Pricing and membership rules need a domain review.
-/packages/core/         @demo-fitness/domain
+/packages/core/         @demo-sl-pruebas/domain
 
 # CI, release tooling and agent configuration.
-/.github/               @demo-fitness/platform
-/.changeset/config.json @demo-fitness/platform
-/.claude/               @demo-fitness/platform
-/scripts/               @demo-fitness/platform
+/.github/               @demo-sl-pruebas/platform
+/.changeset/config.json @demo-sl-pruebas/platform
+/.claude/               @demo-sl-pruebas/platform
+/scripts/               @demo-sl-pruebas/platform
