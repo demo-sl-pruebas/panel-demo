@@ -3,7 +3,7 @@ export type PlanId = 'basic' | 'plus' | 'premium';
 export interface MembershipPlan {
   id: PlanId;
   name: string;
-  /** Monthly list price in euro cents. */
+  /** Monthly list price in euro cents (VAT included, S-05 202611221405). */
   monthlyPriceCents: number;
   includesClasses: boolean;
   includesAllClubs: boolean;
