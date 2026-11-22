@@ -9,3 +9,6 @@
 /.changeset/config.json @demo-sl-pruebas/platform
 /.claude/               @demo-sl-pruebas/platform
 /scripts/               @demo-sl-pruebas/platform
+
+# Design system components.
+/packages/ui/           @demo-sl-pruebas/design-system
